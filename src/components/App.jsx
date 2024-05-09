@@ -5,14 +5,14 @@ import '../style/App.css';
 function App() {
     const animalsList = ["bird", "cat", "cow", "dog", "gator", "horse"];
 
-    function pickRandomAnimal() {
-        return animalsList[Math.floor(Math.random() * animalsList.length)];
+    function pickRandomAnimal(array) {
+        return array[Math.floor(Math.random() * array.length)];
     }
 
     const [selectedAnimalsList, setSelectedAnimalsList] = useState([]);
 
     const addingAnimal = () => {
-        setSelectedAnimalsList([...selectedAnimalsList, pickRandomAnimal()]);
+        setSelectedAnimalsList([...selectedAnimalsList, pickRandomAnimal(animalsList)]);
     }
 
     const animalsCardList = selectedAnimalsList.map((animalType, index) => {
